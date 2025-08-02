@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Clock, UserCheck, AlertCircle, Bone, Brain, Eye, Heart, Activity } from "lucide-react";
 
 const CVDCLanding = () => {
   const scrollToSection = (sectionId: string) => {
@@ -117,179 +117,269 @@ const CVDCLanding = () => {
       {/* Foros de Especialidad */}
       <section id="foros" className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground mb-4">
             🧠 Foros de Especialidad
           </h2>
+          <p className="text-center text-muted-foreground mb-12 text-lg">
+            Cupos <span className="text-primary font-bold">MUY LIMITADOS</span> • Solo con registro previo
+          </p>
           
-          <div className="max-w-4xl mx-auto">
-            <Accordion type="single" collapsible className="space-y-4">
-              {/* Miércoles */}
-              <AccordionItem value="miercoles" className="border border-border rounded-lg card-shadow bg-card">
-                <AccordionTrigger className="px-6 py-4 text-left hover:no-underline">
-                  <div className="flex items-center gap-3">
-                    <span className="text-2xl">📅</span>
-                    <div>
-                      <h3 className="text-xl font-semibold text-primary">Miércoles</h3>
-                      <p className="text-sm text-muted-foreground">3 foros de especialidad</p>
+          {/* Miércoles */}
+          <div className="mb-12">
+            <h3 className="text-2xl font-bold text-center text-foreground mb-6 flex items-center justify-center gap-3">
+              📅 Miércoles
+            </h3>
+            <div className="grid md:grid-cols-3 gap-6">
+              {/* Fisiatría */}
+              <Card className="card-shadow hover:shadow-xl smooth-transition border-l-4 border-l-blue-500 bg-gradient-to-br from-blue-50/50 to-card hover:-translate-y-1">
+                <CardHeader className="pb-3">
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="p-2 bg-blue-100 rounded-lg">
+                      <Activity className="h-6 w-6 text-blue-600" />
+                    </div>
+                    <div className="flex-1">
+                      <CardTitle className="text-lg font-bold text-foreground">Fisiatría</CardTitle>
+                      <div className="flex items-center gap-1 text-sm text-muted-foreground">
+                        <Clock className="h-4 w-4" />
+                        11:00–16:00
+                      </div>
                     </div>
                   </div>
-                </AccordionTrigger>
-                <AccordionContent className="px-6 pb-6">
-                  <div className="space-y-4">
-                    {/* Fisiatría */}
-                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-4 bg-muted/30 rounded-lg">
-                      <div>
-                        <h4 className="font-semibold text-foreground flex items-center gap-2">
-                          🧍 Foro de Especialidad – Fisiatría
-                        </h4>
-                        <p className="text-sm text-muted-foreground">11:00–16:00</p>
-                      </div>
-                      <Button 
-                        variant="default" 
-                        size="sm"
-                        onClick={() => window.open('https://forms.gle/fisiatria', '_blank')}
-                      >
-                        Inscribirme
-                      </Button>
-                    </div>
+                  <CardDescription className="text-sm text-muted-foreground">
+                    Rehabilitación, fisioterapia animal y medicina del movimiento
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="pt-0">
+                  <Button 
+                    variant="default" 
+                    className="w-full bg-blue-600 hover:bg-blue-700 font-bold animate-pulse hover:animate-none"
+                    onClick={() => window.open('https://forms.gle/fisiatria', '_blank')}
+                  >
+                    <UserCheck className="h-4 w-4 mr-2" />
+                    ¡Reservar Cupo!
+                  </Button>
+                </CardContent>
+              </Card>
 
-                    {/* Etología */}
-                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-4 bg-muted/30 rounded-lg">
-                      <div>
-                        <h4 className="font-semibold text-foreground flex items-center gap-2">
-                          🐾 Foro de Especialidad – Etología
-                        </h4>
-                        <p className="text-sm text-muted-foreground">14:00–16:00</p>
-                      </div>
-                      <Button 
-                        variant="default" 
-                        size="sm"
-                        onClick={() => window.open('https://forms.gle/etologia', '_blank')}
-                      >
-                        Inscribirme
-                      </Button>
+              {/* Etología */}
+              <Card className="card-shadow hover:shadow-xl smooth-transition border-l-4 border-l-green-500 bg-gradient-to-br from-green-50/50 to-card hover:-translate-y-1">
+                <CardHeader className="pb-3">
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="p-2 bg-green-100 rounded-lg">
+                      <Brain className="h-6 w-6 text-green-600" />
                     </div>
-
-                    {/* Ortopedia */}
-                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-4 bg-muted/30 rounded-lg">
-                      <div>
-                        <h4 className="font-semibold text-foreground flex items-center gap-2">
-                          🦴 Foro de Especialidad – Ortopedia
-                        </h4>
-                        <p className="text-sm text-muted-foreground">17:00–19:00</p>
+                    <div className="flex-1">
+                      <CardTitle className="text-lg font-bold text-foreground">Etología</CardTitle>
+                      <div className="flex items-center gap-1 text-sm text-muted-foreground">
+                        <Clock className="h-4 w-4" />
+                        14:00–16:00
                       </div>
-                      <Button 
-                        variant="default" 
-                        size="sm"
-                        onClick={() => window.open('https://forms.gle/orthopedia', '_blank')}
-                      >
-                        Inscribirme
-                      </Button>
                     </div>
                   </div>
-                </AccordionContent>
-              </AccordionItem>
+                  <CardDescription className="text-sm text-muted-foreground">
+                    Trastornos de conducta, bienestar y protocolos terapéuticos
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="pt-0">
+                  <Button 
+                    variant="default" 
+                    className="w-full bg-green-600 hover:bg-green-700 font-bold animate-pulse hover:animate-none"
+                    onClick={() => window.open('https://forms.gle/etologia', '_blank')}
+                  >
+                    <UserCheck className="h-4 w-4 mr-2" />
+                    ¡Reservar Cupo!
+                  </Button>
+                </CardContent>
+              </Card>
 
-              {/* Jueves */}
-              <AccordionItem value="jueves" className="border border-border rounded-lg card-shadow bg-card">
-                <AccordionTrigger className="px-6 py-4 text-left hover:no-underline">
-                  <div className="flex items-center gap-3">
-                    <span className="text-2xl">📅</span>
-                    <div>
-                      <h3 className="text-xl font-semibold text-primary">Jueves</h3>
-                      <p className="text-sm text-muted-foreground">2 foros de especialidad</p>
+              {/* Ortopedia */}
+              <Card className="card-shadow hover:shadow-xl smooth-transition border-l-4 border-l-orange-500 bg-gradient-to-br from-orange-50/50 to-card hover:-translate-y-1">
+                <CardHeader className="pb-3">
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="p-2 bg-orange-100 rounded-lg">
+                      <Bone className="h-6 w-6 text-orange-600" />
+                    </div>
+                    <div className="flex-1">
+                      <CardTitle className="text-lg font-bold text-foreground">Ortopedia</CardTitle>
+                      <div className="flex items-center gap-1 text-sm text-muted-foreground">
+                        <Clock className="h-4 w-4" />
+                        17:00–19:00
+                      </div>
                     </div>
                   </div>
-                </AccordionTrigger>
-                <AccordionContent className="px-6 pb-6">
-                  <div className="space-y-4">
-                    {/* Neurología */}
-                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-4 bg-muted/30 rounded-lg">
-                      <div>
-                        <h4 className="font-semibold text-foreground flex items-center gap-2">
-                          🧠 Foro de Especialidad – Neurología
-                        </h4>
-                        <p className="text-sm text-muted-foreground">11:00–16:00</p>
-                      </div>
-                      <Button 
-                        variant="default" 
-                        size="sm"
-                        onClick={() => window.open('https://forms.gle/neurologia', '_blank')}
-                      >
-                        Inscribirme
-                      </Button>
-                    </div>
+                  <CardDescription className="text-sm text-muted-foreground">
+                    Abordajes quirúrgicos, biomecánica y casos clínicos ortopédicos
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="pt-0">
+                  <Button 
+                    variant="default" 
+                    className="w-full bg-orange-600 hover:bg-orange-700 font-bold animate-pulse hover:animate-none"
+                    onClick={() => window.open('https://forms.gle/orthopedia', '_blank')}
+                  >
+                    <UserCheck className="h-4 w-4 mr-2" />
+                    ¡Reservar Cupo!
+                  </Button>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
 
-                    {/* Oftalmología */}
-                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-4 bg-muted/30 rounded-lg">
-                      <div>
-                        <h4 className="font-semibold text-foreground flex items-center gap-2">
-                          👁️ Foro de Especialidad – Oftalmología
-                        </h4>
-                        <p className="text-sm text-muted-foreground">14:00–16:00</p>
+          {/* Jueves */}
+          <div className="mb-12">
+            <h3 className="text-2xl font-bold text-center text-foreground mb-6 flex items-center justify-center gap-3">
+              📅 Jueves
+            </h3>
+            <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+              {/* Neurología */}
+              <Card className="card-shadow hover:shadow-xl smooth-transition border-l-4 border-l-purple-500 bg-gradient-to-br from-purple-50/50 to-card hover:-translate-y-1">
+                <CardHeader className="pb-3">
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="p-2 bg-purple-100 rounded-lg">
+                      <Brain className="h-6 w-6 text-purple-600" />
+                    </div>
+                    <div className="flex-1">
+                      <CardTitle className="text-lg font-bold text-foreground">Neurología</CardTitle>
+                      <div className="flex items-center gap-1 text-sm text-muted-foreground">
+                        <Clock className="h-4 w-4" />
+                        11:00–16:00
                       </div>
-                      <Button 
-                        variant="default" 
-                        size="sm"
-                        onClick={() => window.open('https://forms.gle/oftalmologia', '_blank')}
-                      >
-                        Inscribirme
-                      </Button>
                     </div>
                   </div>
-                </AccordionContent>
-              </AccordionItem>
+                  <CardDescription className="text-sm text-muted-foreground">
+                    Casos clínicos neurológicos y diagnóstico avanzado
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="pt-0">
+                  <Button 
+                    variant="default" 
+                    className="w-full bg-purple-600 hover:bg-purple-700 font-bold animate-pulse hover:animate-none"
+                    onClick={() => window.open('https://forms.gle/neurologia', '_blank')}
+                  >
+                    <UserCheck className="h-4 w-4 mr-2" />
+                    ¡Reservar Cupo!
+                  </Button>
+                </CardContent>
+              </Card>
 
-              {/* Viernes */}
-              <AccordionItem value="viernes" className="border border-border rounded-lg card-shadow bg-card">
-                <AccordionTrigger className="px-6 py-4 text-left hover:no-underline">
-                  <div className="flex items-center gap-3">
-                    <span className="text-2xl">📅</span>
-                    <div>
-                      <h3 className="text-xl font-semibold text-primary">Viernes</h3>
-                      <p className="text-sm text-muted-foreground">2 foros de especialidad</p>
+              {/* Oftalmología */}
+              <Card className="card-shadow hover:shadow-xl smooth-transition border-l-4 border-l-cyan-500 bg-gradient-to-br from-cyan-50/50 to-card hover:-translate-y-1">
+                <CardHeader className="pb-3">
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="p-2 bg-cyan-100 rounded-lg">
+                      <Eye className="h-6 w-6 text-cyan-600" />
+                    </div>
+                    <div className="flex-1">
+                      <CardTitle className="text-lg font-bold text-foreground">Oftalmología</CardTitle>
+                      <div className="flex items-center gap-1 text-sm text-muted-foreground">
+                        <Clock className="h-4 w-4" />
+                        14:00–16:00
+                      </div>
                     </div>
                   </div>
-                </AccordionTrigger>
-                <AccordionContent className="px-6 pb-6">
-                  <div className="space-y-4">
-                    {/* Ortopedia */}
-                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-4 bg-muted/30 rounded-lg">
-                      <div>
-                        <h4 className="font-semibold text-foreground flex items-center gap-2">
-                          🦴 Foro de Especialidad – Ortopedia
-                        </h4>
-                        <p className="text-sm text-muted-foreground">11:00–16:00</p>
-                      </div>
-                      <Button 
-                        variant="default" 
-                        size="sm"
-                        onClick={() => window.open('https://forms.gle/orthopedia', '_blank')}
-                      >
-                        Inscribirme
-                      </Button>
-                    </div>
+                  <CardDescription className="text-sm text-muted-foreground">
+                    Cirugía ocular, diagnóstico y terapias especializadas
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="pt-0">
+                  <Button 
+                    variant="default" 
+                    className="w-full bg-cyan-600 hover:bg-cyan-700 font-bold animate-pulse hover:animate-none"
+                    onClick={() => window.open('https://forms.gle/oftalmologia', '_blank')}
+                  >
+                    <UserCheck className="h-4 w-4 mr-2" />
+                    ¡Reservar Cupo!
+                  </Button>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
 
-                    {/* Neurología */}
-                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-4 bg-muted/30 rounded-lg">
-                      <div>
-                        <h4 className="font-semibold text-foreground flex items-center gap-2">
-                          🧠 Foro de Especialidad – Neurología
-                        </h4>
-                        <p className="text-sm text-muted-foreground">14:00–16:00</p>
+          {/* Viernes */}
+          <div className="mb-8">
+            <h3 className="text-2xl font-bold text-center text-foreground mb-6 flex items-center justify-center gap-3">
+              📅 Viernes
+            </h3>
+            <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+              {/* Ortopedia */}
+              <Card className="card-shadow hover:shadow-xl smooth-transition border-l-4 border-l-orange-500 bg-gradient-to-br from-orange-50/50 to-card hover:-translate-y-1">
+                <CardHeader className="pb-3">
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="p-2 bg-orange-100 rounded-lg">
+                      <Bone className="h-6 w-6 text-orange-600" />
+                    </div>
+                    <div className="flex-1">
+                      <CardTitle className="text-lg font-bold text-foreground">Ortopedia</CardTitle>
+                      <div className="flex items-center gap-1 text-sm text-muted-foreground">
+                        <Clock className="h-4 w-4" />
+                        11:00–16:00
                       </div>
-                      <Button 
-                        variant="default" 
-                        size="sm"
-                        onClick={() => window.open('https://forms.gle/neurologia', '_blank')}
-                      >
-                        Inscribirme
-                      </Button>
                     </div>
                   </div>
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
+                  <CardDescription className="text-sm text-muted-foreground">
+                    Abordajes quirúrgicos, biomecánica y casos clínicos ortopédicos
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="pt-0">
+                  <Button 
+                    variant="default" 
+                    className="w-full bg-orange-600 hover:bg-orange-700 font-bold animate-pulse hover:animate-none"
+                    onClick={() => window.open('https://forms.gle/orthopedia', '_blank')}
+                  >
+                    <UserCheck className="h-4 w-4 mr-2" />
+                    ¡Reservar Cupo!
+                  </Button>
+                </CardContent>
+              </Card>
+
+              {/* Neurología */}
+              <Card className="card-shadow hover:shadow-xl smooth-transition border-l-4 border-l-purple-500 bg-gradient-to-br from-purple-50/50 to-card hover:-translate-y-1">
+                <CardHeader className="pb-3">
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="p-2 bg-purple-100 rounded-lg">
+                      <Brain className="h-6 w-6 text-purple-600" />
+                    </div>
+                    <div className="flex-1">
+                      <CardTitle className="text-lg font-bold text-foreground">Neurología</CardTitle>
+                      <div className="flex items-center gap-1 text-sm text-muted-foreground">
+                        <Clock className="h-4 w-4" />
+                        14:00–16:00
+                      </div>
+                    </div>
+                  </div>
+                  <CardDescription className="text-sm text-muted-foreground">
+                    Casos clínicos neurológicos y diagnóstico avanzado
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="pt-0">
+                  <Button 
+                    variant="default" 
+                    className="w-full bg-purple-600 hover:bg-purple-700 font-bold animate-pulse hover:animate-none"
+                    onClick={() => window.open('https://forms.gle/neurologia', '_blank')}
+                  >
+                    <UserCheck className="h-4 w-4 mr-2" />
+                    ¡Reservar Cupo!
+                  </Button>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+
+          {/* Mensaje de urgencia */}
+          <div className="max-w-3xl mx-auto">
+            <Card className="border-2 border-primary bg-gradient-to-r from-primary/5 to-primary/10">
+              <CardContent className="p-6 text-center">
+                <div className="flex items-center justify-center gap-2 mb-3">
+                  <AlertCircle className="h-6 w-6 text-primary animate-pulse" />
+                  <h4 className="text-lg font-bold text-primary">¡ATENCIÓN!</h4>
+                  <AlertCircle className="h-6 w-6 text-primary animate-pulse" />
+                </div>
+                <p className="text-foreground font-medium">
+                  Solo se permite el ingreso a personas con <span className="text-primary font-bold">registro previo confirmado</span>. 
+                  Los cupos se agotan rápidamente cada año.
+                </p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
